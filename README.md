@@ -12,11 +12,21 @@ detailed installation instructions.
 
 OMPL.app has the following required dependencies:
 
+* [gcc](https://gcc.gnu.org/) or similar compiler
+* [GNU Make](https://www.gnu.org/software/make/)
 * [Boost](https://www.boost.org) (version 1.58 or higher)
 * [CMake](https://www.cmake.org) (version 3.12 or higher)
 * [Eigen](http://eigen.tuxfamily.org) (version 3.3 or higher)
 * [Assimp](http://assimp.org) (version 3.0.1270 or higher)
 * [FCL](https://github.com/flexible-collision-library/fcl) (version 0.3.1 or higher)
+
+On Ubuntu:
+```
+sudo apt update
+sudo apt install \
+build-essential libboost-filesystem-dev libboost-serialization-dev libboost-system-dev libboost-program-options-dev \
+cmake libeigen3-dev libassimp-dev libfcl-dev
+```
 
 The following dependencies are optional:
 
@@ -26,13 +36,19 @@ The following dependencies are optional:
 * [Doxygen](http://www.doxygen.org) (needed to create a local copy of the documentation at
   https://ompl.kavrakilab.org)
 
+On Ubuntu:
+```
+sudo apt update
+sudo apt install \
+TODO
+```
+
 Once dependencies are installed, you can build OMPL.app on Linux, macOS,
 and MS Windows. Go to the top-level directory of OMPL.app and type the
 following commands:
 
-    mkdir -p build/Release
-    cd build/Release
-    cmake ../..
+    cmake -B build/Release
+    cmake --build build/Release/
     # next step is optional
     make -j 4 update_bindings # if you want to use the GUI or Python bindings
     make -j 4 # replace "4" with the number of cores on your machine
