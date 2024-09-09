@@ -38,6 +38,7 @@
 #define OMPL_BASE_STATE_
 
 #include <boost/concept_check.hpp>
+#include <cassert>
 
 namespace ompl
 {
@@ -106,7 +107,7 @@ namespace ompl
             {
                 /** \brief Make sure the type we are allocating is indeed a state */
                 BOOST_CONCEPT_ASSERT((boost::Convertible<T *, State *>));
-
+                assert(components != nullptr);
                 return static_cast<T *>(components[index]);
             }
 

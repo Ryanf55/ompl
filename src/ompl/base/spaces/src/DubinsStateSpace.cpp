@@ -819,6 +819,8 @@ unsigned int ompl::base::DubinsStateSpace::validSegmentCount(const State *state1
 ompl::base::DubinsStateSpace::DubinsPath ompl::base::DubinsStateSpace::dubins(const State *state1,
                                                                               const State *state2) const
 {
+    assert(state1 != nullptr);
+    assert(state2 != nullptr);
     const auto *s1 = static_cast<const StateType *>(state1);
     const auto *s2 = static_cast<const StateType *>(state2);
     double x1 = s1->getX(), y1 = s1->getY(), th1 = s1->getYaw();
