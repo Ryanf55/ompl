@@ -12,7 +12,9 @@ if (OMPL_BUILD_DEMOS)
             ompl
             ${Boost_FILESYSTEM_LIBRARY}
             ${Boost_SYSTEM_LIBRARY}
-            ${Boost_PROGRAM_OPTIONS_LIBRARY})
+            ${Boost_PROGRAM_OPTIONS_LIBRARY}
+            ${Boost_IOSTREAMS_LIBRARY}
+            )
     endmacro(add_ompl_demo)
 
     add_ompl_demo(demo_DubinsSE2 DubinsSE2.cpp)
